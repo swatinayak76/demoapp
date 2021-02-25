@@ -20,5 +20,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swatinayak76/demoapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/swatinayak76/demoapp/issues"
+  },
+  "homepage": "https://github.com/swatinayak76/demoapp#readme"
 }
