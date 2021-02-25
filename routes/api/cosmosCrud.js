@@ -6,7 +6,7 @@ var multipartMiddleware = multipart();
 const { BlobServiceClient } = require("@azure/storage-blob");
 const config = require("config");
 const storageConnectionString = config.get("storageConnectionString");
-const containerName = "demoapp";
+const containerName = "stairshowpoceastus001";
 const blobServiceClient = BlobServiceClient.fromConnectionString(
   storageConnectionString
 );
@@ -14,10 +14,10 @@ const containerClient = blobServiceClient.getContainerClient(containerName);
 
 const CosmosClient = require("@azure/cosmos").CosmosClient;
 const client = new CosmosClient(config.get("cosmosConnectionString"));
-const database = client.database("demoappdb");
-const container = database.container("event");
+const database = client.database("db-airshow");
+const container = database.container("cont-airshow");
 
-router.post("/", multipartMiddleware, async (req, res) => {
+router.post("/createevent", multipartMiddleware, async (req, res) => {
   try {
     let _eventLogo = [];
     let _sponsorLogo = [];
@@ -120,11 +120,11 @@ router.post("/", multipartMiddleware, async (req, res) => {
 });
 
 router.delete(
-  "/DocumentId/:DocumentId/PartitionKey/:PartitionKey",
+  "/deleteevent/:eventCode/PartitionKey/:PartitionKey",
   async (req, res) => {
     try {
       const { resource: result } = await container
-        .item(req.params.DocumentId, req.params.PartitionKey)
+        .item(req.params.eventCode, req.params.PartitionKey)
         .delete();
       return res.send("true");
     } catch (err) {
@@ -237,12 +237,12 @@ router.put("/", multipartMiddleware, async (req, res) => {
   }
 });
 
-router.get("/DocumentId/:DocumentId", async (req, res) => {
+router.get("/geteventbycode/:eventCode", async (req, res) => {
   try {
     const { resources } = await container.items
       .query({
-        query: "SELECT * from c WHERE c.id = @id",
-        parameters: [{ name: "@id", value: req.params.DocumentId }],
+        query: "SELECT * from c WHERE c.eventCode = @eventCode",
+        parameters: [{ name: "@eventCode", value: req.params.eventCode}],
       })
       .fetchAll();
     return res.send(resources);
@@ -253,7 +253,7 @@ router.get("/DocumentId/:DocumentId", async (req, res) => {
 });
 
 async function uploadToAzureStorage(file) {
-  const blobName = uuidv1() + file.name;
+  const blobName = uuidv1() + "/" + file.name;
   const contentType = file.type;
   const filePath = file.path; //This is where you get the file path.
   const blockBlobClient = containerClient.getBlockBlobClient(blobName);

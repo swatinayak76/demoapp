@@ -1,5 +1,5 @@
 {
-  "name": "demoapp_v1",
+  "name": "airshowapp_v1",
   "version": "1.0.0",
   "description": " Crud Operation With Cosmos And Azure Storage",
   "main": "server.js",

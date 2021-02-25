@@ -1,5 +1,5 @@
 {
-    "storageConnectionString":"DefaultEndpointsProtocol=https;AccountName=stdemoapppoc001;AccountKey=8yfndJz+JAw6/nyLErbzSx9HMMl/lc7EsYbjO6GA9NgL6y+GBwp/A3HOcYOmCLoq+v43a4QcoXbRe2TVdIhkbg==;EndpointSuffix=core.windows.net",
-    "cosmosConnectionString":"AccountEndpoint=https://cosdb-demoapp-poc.documents.azure.com:443/;AccountKey=LUcmE3y0hxa7AruQcFMU3IHfbhKj7EElsK3ZRTYmDUQo25qDmlNHblk7GxFgVC4EUj3PZ92t8F6dbWzTRJTicA==;"
+    "storageConnectionString":"DefaultEndpointsProtocol=https;AccountName=stairshowpoceastus001;AccountKey=PptuiONOmJmrSjs4UJSYVCfKCCAMxLMoPUXCkau494S+c8Fj9XWXA/Y6GO4znMQ+CxpTS50OYDrrjG5ChD5hSg==;EndpointSuffix=core.windows.net",
+    "cosmosConnectionString":"AccountEndpoint=https://cosdb-airshow-poc-eastus.documents.azure.com:443/;AccountKey=fBPfBiwBD8UJaWc9ADdXkEhh2rmpSW1Oa2jE3TRcDYT46CCZZ7q0vwbeJu4C8pEOlVjlsOhYYdTvOAtv1Jp9Jg==;"
     
 }
