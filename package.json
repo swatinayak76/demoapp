@@ -23,10 +23,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/swatinayak76/demoapp.git"
+    "url": "git+https://github.com/swatinayak76/airshow-backendapis-server-nodejs.git"
   },
   "bugs": {
-    "url": "https://github.com/swatinayak76/demoapp/issues"
+    "url": "https://github.com/swatinayak76/airshow-backendapis-server-nodejs/issues"
   },
-  "homepage": "https://github.com/swatinayak76/demoapp#readme"
+  "homepage": "https://github.com/swatinayak76/airshow-backendapis-server-nodejs#readme"
 }
